@@ -25,7 +25,7 @@ def image_slices(image: np.ndarray, slice_height: int, slice_width: int):
 def image_with_gaussian_noise(image: np.ndarray, mean: int = 0, std: float = 0.05):
     row,col,ch= image.shape
     gauss = np.random.normal(mean,std,(row,col,ch))
-    gauss = (255*gauss.reshape(row,col,ch)).astype(np.uint8)
+    gauss = (255*np.abs(gauss.reshape(row,col,ch))).astype(np.uint8)
 
     noisy_image = image + gauss
     return noisy_image
