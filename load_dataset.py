@@ -20,7 +20,7 @@ def load_dataset_directory(path_str: str, ground_truth_name_pattern: str="GT_*.P
         noisy_image = cv2.imread(str(file))
         break
 
-    return ground_truth_image, noisy_image
+    return noisy_image, ground_truth_image
 
 def load_dataset(base_path_str: str = "../SIDD_Small_sliced/Data", training_examples: int = 10000, test_examples: int = 1250, validataion_examples: int = 1250):
     base_path = Path(base_path_str)
